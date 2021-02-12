@@ -37,4 +37,8 @@ public class Jogo {
     public void setPonto(int ponto) {
         this.ponto = ponto;
     }
+
+    public List<ValoresSorteio> getAcertos() {
+        return acertos;
+    }
 }
