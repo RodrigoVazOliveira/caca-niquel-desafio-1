@@ -35,15 +35,25 @@ public class Sistema {
         jogo.setDificultade(IO.input().nextInt());
     }
 
+    /**
+     * responsavel por exibir as pontuaçãos para usuário
+     * */
     private void exbbirResultado() {
         IO.output("Acertos: " + jogo.getAcertos());
         jogo.verificarBonus();
         IO.output("Pontos ganhos: " + jogo.getPonto());
+        exibirBonus();
+        IO.output("A sua pontuação total foi: " + jogo.getPonto() * jogo.getBonus());
+    }
+
+    /**
+     * responsavel por exibir a mensagem correta se ouve bonus ou não
+     * */
+    private void exibirBonus() {
         if (jogo.getBonus() == 100) {
             IO.output("Parabéns! você acertou uma sequencia e ganhou bônus de: " + ((jogo.getPonto() * jogo.getBonus()) - jogo.getPonto()) + " pontos");
         } else {
             IO.output("Você não acertou uma sequência, lamentavel.");
         }
-        IO.output("A sua pontuação total foi: " + jogo.getPonto() * jogo.getBonus());
     }
 }
