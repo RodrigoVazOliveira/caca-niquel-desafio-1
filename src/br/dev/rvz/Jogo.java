@@ -41,6 +41,21 @@ public class Jogo {
         this.ponto += ponto;
     }
 
+    public int verificarBonux() {
+        ValoresSorteio valoresSorteio = acertos.get(0);
+        int sizeAcerto = 0;
+        for (ValoresSorteio item: acertos) {
+            if (valoresSorteio.equals(item)) {
+                sizeAcerto++;
+            }
+        }
+        if (sizeAcerto == acertos.size()) {
+            return 100;
+        } else {
+            return 1;
+        }
+    }
+
     public int getPonto() {
         return ponto;
     }
