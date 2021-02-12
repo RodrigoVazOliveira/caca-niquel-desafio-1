@@ -14,10 +14,15 @@ public class Sistema {
     public void executarPrograma() {
         menuPrincipal();
         Jogo jogo = new Jogo();
-        jogo.sortear();
-        jogo.sortear();
-        jogo.sortear();
+        IO.output("por favor, informe um nível de dificuldade ( maior que 3): ");
+        dificultadeDoJogo(jogo);
         IO.output("Acertos: " + jogo.getAcertos());
         IO.output("A sua pontuação total foi: " + jogo.getPonto());
+    }
+
+    private void dificultadeDoJogo(Jogo jogo, int nivelDificultadade) {
+        for (int i = 0; i < nivelDificultadade; i++) {
+            jogo.sortear();
+        }
     }
 }

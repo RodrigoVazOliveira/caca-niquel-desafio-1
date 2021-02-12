@@ -6,23 +6,35 @@ import java.util.Random;
 
 /**
  * responsavel por fazer a geraçaõ do jogo aleatorio
- * e gerenciar pontos
+ * e gerenciar pontos e dificultade
  * */
 public class Jogo {
 
     private int numeroAleatorio;
     private List<ValoresSorteio> acertos;
     private int ponto;
+    private int dificultade;
 
     public Jogo() {
         this.ponto = 0;
         acertos = new ArrayList<>();
     }
 
-    public int sortear() {
+    public void jogar() {
+        if (dificultade <= 3) {
+            sortear();
+            sortear();
+            sortear();
+        } else {
+            for (int i = 0; i < dificultade; i++) {
+                sortear();
+            }
+        }
+    }
+
+    public void sortear() {
         numeroAleatorio = new Random().nextInt(ValoresSorteio.values().length);
         gerenciar(ValoresSorteio.values()[numeroAleatorio], ValoresSorteio.values()[numeroAleatorio].ponto);
-        return ValoresSorteio.values()[numeroAleatorio].ponto;
     }
 
     private void gerenciar(ValoresSorteio valoresSorteio, int ponto) {
@@ -40,5 +52,13 @@ public class Jogo {
 
     public List<ValoresSorteio> getAcertos() {
         return acertos;
+    }
+
+    public int getDificultade() {
+        return dificultade;
+    }
+
+    public void setDificultade(int dificultade) {
+        this.dificultade = dificultade;
     }
 }
