@@ -1,7 +1,7 @@
 package br.dev.rvz;
 
 /**
- *  rsponsavel pelo gerenciamento de pontos e interafção com o usuário
+ *  rsponsavel pelo gerenciamento tde interafção com o usuário
  * */
 public class Sistema {
 
@@ -11,5 +11,6 @@ public class Sistema {
     public void menuPrincipal() {
         IO.output("1. Jogar\n2. Sair do jogo");
     }
-    
+
+
 }

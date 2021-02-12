@@ -6,7 +6,7 @@ import java.util.Random;
 
 /**
  * responsavel por fazer a geraçaõ do jogo aleatorio
- *
+ * e gerenciar pontos
  * */
 public class Jogo {
 
@@ -21,8 +21,13 @@ public class Jogo {
 
     public int sortear() {
         numeroAleatorio = new Random().nextInt(ValoresSorteio.values().length);
-        acertos.add(ValoresSorteio.values()[numeroAleatorio]);
+        gerenciar(ValoresSorteio.values()[numeroAleatorio], ValoresSorteio.values()[numeroAleatorio].ponto);
         return ValoresSorteio.values()[numeroAleatorio].ponto;
+    }
+
+    private void gerenciar(ValoresSorteio valoresSorteio, int ponto) {
+        acertos.add(valoresSorteio);
+        this.ponto += ponto;
     }
 
     public int getPonto() {
