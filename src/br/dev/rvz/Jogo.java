@@ -13,6 +13,7 @@ public class Jogo {
     private List<ValoresSorteio> acertos;
     private int ponto;
     private int dificultade;
+    private int bonus;
 
     public Jogo() {
         this.ponto = 0;
@@ -41,7 +42,7 @@ public class Jogo {
         this.ponto += ponto;
     }
 
-    public int verificarBonux() {
+    public void verificarBonux() {
         ValoresSorteio valoresSorteio = acertos.get(0);
         int sizeAcerto = 0;
         for (ValoresSorteio item: acertos) {
@@ -50,9 +51,9 @@ public class Jogo {
             }
         }
         if (sizeAcerto == acertos.size()) {
-            return 100;
+           bonus = 100;
         } else {
-            return 1;
+            bonus = 1;
         }
     }
 
@@ -74,5 +75,9 @@ public class Jogo {
 
     public void setDificultade(int dificultade) {
         this.dificultade = dificultade;
+    }
+
+    public int getBonus() {
+        return bonus;
     }
 }
