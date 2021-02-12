@@ -10,7 +10,6 @@ import java.util.Random;
  * */
 public class Jogo {
 
-    private int numeroAleatorio;
     private List<ValoresSorteio> acertos;
     private int ponto;
     private int dificultade;
@@ -33,7 +32,7 @@ public class Jogo {
     }
 
     public void sortear() {
-        numeroAleatorio = new Random().nextInt(ValoresSorteio.values().length);
+        int numeroAleatorio = new Random().nextInt(ValoresSorteio.values().length);
         gerenciar(ValoresSorteio.values()[numeroAleatorio], ValoresSorteio.values()[numeroAleatorio].ponto);
     }
 
