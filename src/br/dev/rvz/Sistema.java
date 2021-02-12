@@ -11,6 +11,7 @@ public class Sistema {
     }
 
     public void executarPrograma() {
+        menuPrincipal();
         Jogo jogo = new Jogo();
         jogo.sortear();
         jogo.sortear();
