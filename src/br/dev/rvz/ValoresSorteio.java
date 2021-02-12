@@ -5,11 +5,13 @@ package br.dev.rvz;
  * */
 public enum ValoresSorteio {
 
-    BANANA(10), MORANGO(20), ESTRELA(40);
+    BANANA(10, 1), MORANGO(20, 2), ESTRELA(40, 3);
 
     private int ponto;
+    private int numeroSorteio;
 
-    ValoresSorteio(int ponto) {
+    ValoresSorteio(int ponto, int numeroSorteio) {
         this.ponto = ponto;
+        this.numeroSorteio = numeroSorteio;
     }
 }
