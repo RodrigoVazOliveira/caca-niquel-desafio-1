@@ -32,7 +32,7 @@ public class Jogo {
         }
     }
 
-    public void sortear() {
+    private void sortear() {
         int numeroAleatorio = new Random().nextInt(ValoresSorteio.values().length);
         gerenciar(ValoresSorteio.values()[numeroAleatorio], ValoresSorteio.values()[numeroAleatorio].ponto);
     }
@@ -42,7 +42,7 @@ public class Jogo {
         this.ponto += ponto;
     }
 
-    public void verificarBonux() {
+    public void verificarBonus() {
         ValoresSorteio valoresSorteio = acertos.get(0);
         int sizeAcerto = 0;
         for (ValoresSorteio item: acertos) {

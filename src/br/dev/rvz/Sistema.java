@@ -37,7 +37,7 @@ public class Sistema {
 
     private void exbbirResultado() {
         IO.output("Acertos: " + jogo.getAcertos());
-        jogo.verificarBonux();
+        jogo.verificarBonus();
         IO.output("Pontos ganhos: " + jogo.getPonto());
         int bonus = jogo.getBonus();
 
