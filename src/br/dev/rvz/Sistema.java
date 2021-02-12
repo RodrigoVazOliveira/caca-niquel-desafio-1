@@ -5,12 +5,16 @@ package br.dev.rvz;
  * */
 public class Sistema {
 
-    private boolean run;
-    private int opcao;
-
     public void menuPrincipal() {
-        IO.output("1. Jogar\n2. Sair do jogo");
+        IO.output("Bem vindo ao caça níquel!");
+        IO.output("Desejamos uma boa sorte!!!");
     }
 
-
+    public void executarPrograma() {
+        Jogo jogo = new Jogo();
+        jogo.sortear();
+        jogo.sortear();
+        jogo.sortear();
+        IO.output("A sua pontuação total foi: " + jogo.getPonto());
+    }
 }
