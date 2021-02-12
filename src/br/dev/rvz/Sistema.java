@@ -39,10 +39,8 @@ public class Sistema {
         IO.output("Acertos: " + jogo.getAcertos());
         jogo.verificarBonus();
         IO.output("Pontos ganhos: " + jogo.getPonto());
-        int bonus = jogo.getBonus();
-
-        if (bonus == 100) {
-            IO.output("Parabéns! você acertou uma sequencia e ganhou bônus de: " + ((jogo.getPonto() * bonus) - jogo.getPonto()) + " pontos");
+        if (jogo.getBonus() == 100) {
+            IO.output("Parabéns! você acertou uma sequencia e ganhou bônus de: " + ((jogo.getPonto() * jogo.getBonus()) - jogo.getPonto()) + " pontos");
         } else {
             IO.output("Você não acertou uma sequência, lamentavel.");
         }
